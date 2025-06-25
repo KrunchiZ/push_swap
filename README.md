@@ -22,3 +22,7 @@ In this project, I've explored the concept of using doubly circular linked lists
 	- rra (reverse rotate a): Shift down all elements of stack a by 1. The last element becomes the first one.
 	- rrb (reverse rotate b): Shift down all elements of stack b by 1. The last element becomes the first one.
 	- rrr : rra and rrb at the same time.
+
+### Resources
+
+- [libft](https://www.github.com/KrunchiZ/libft)
