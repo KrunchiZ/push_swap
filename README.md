@@ -1,13 +1,14 @@
 # push_swap
 
-A program that sorts a stack of integers in ascending order. The goal of this project is to find the least moves instead of the fastest.
+A program that find the least moves to sort a stack of numbers instead of the fastest.
+In this project, I've explored the concept of using doubly circular linked lists as my stacks.
 
 ### Rules
 
 - You have 2 stacks named a and b.
 - At the beginning:
-	- The stack a contains a random number of unique negative and/or positive integers.
-	- The stack b is empty.
+	- Stack a contains a random number of unique negative and/or positive integers.
+	- Stack b is empty.
 - The goal is to sort the numbers in stack a in ascending order.
 - To achieve this, you have the following operations at your disposal:
 	- sa (swap a): Swap the first 2 elements at the top of stack a. Do nothing if there is only one element or none.
