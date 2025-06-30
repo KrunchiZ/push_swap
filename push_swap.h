@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 19:03:56 by kchiang           #+#    #+#             */
-/*   Updated: 2025/06/30 14:43:49 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/06/30 15:51:50 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ typedef struct s_stack
 t_stack	*ps_cdlstnew(void *nb);
 void	ps_cdlstadd_front(t_stack **cdlst, t_stack *new);
 void	ps_cdlstadd_back(t_stack **cdlst, t_stack *new);
-void	ps_cdlstdelone(t_stack *cdlst);
+void	ps_cdlstdelone(t_stack **cdlst);
 void	ps_cdlstclear(t_stack **cdlst);
 
 #endif

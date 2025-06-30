@@ -6,10 +6,30 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 14:37:26 by kchiang           #+#    #+#             */
-/*   Updated: 2025/06/30 14:45:15 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/06/30 16:07:57 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+void	ps_swap(t_stack **stack)
+{
+	t_stack	second;
+	t_stack	third;
 
+	if (!stack || !(*stack) || (*stack)->next == *stack)
+		return ;
+	second = (*stack)->next;
+	third = second->next;
+	(*stack)->next = third;
+	third->previous = *stack;
+	ps_cdlstadd_front(stack, second);
+	return ;
+}
+
+void	ps_swapswap(t_stack **a, t_stack **b)
+{
+	ps_swap(a);
+	ps_swap(b);
+	return ;
+}

@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 10:43:07 by kchiang           #+#    #+#             */
-/*   Updated: 2025/06/30 14:42:04 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/06/30 15:51:45 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,18 +54,18 @@ void	*ps_cdlstadd_back(t_stack **cdlst, t_stack *new)
 	return ;
 }
 
-void	ps_cdlstdelone(t_stack *cdlst)
+void	ps_cdlstdelone(t_stack **cdlst)
 {
 	t_stack	*prev;
 	t_stack	*junk;
 
 	if (!cdlst)
 		return ;
-	junk = cdlst;
+	junk = *cdlst;
 	prev = junk->previous;
-	cdlst = cdlst->next;
-	cdlst->previous = prev;
-	prev->next = cdlst;
+	*cdlst = (*cdlst)->next;
+	(*cdlst)->previous = prev;
+	prev->next = *cdlst;
 	free(junk);
 	return ;
 }
