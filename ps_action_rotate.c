@@ -1,0 +1,39 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ps_action_rotate.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/06/30 17:20:04 by kchiang           #+#    #+#             */
+/*   Updated: 2025/06/30 17:30:00 by kchiang          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "push_swap.h"
+
+void	ps_rotate(t_stack **stack)
+{
+	*stack = (*stack)->next;
+	return ;
+}
+
+void	ps_dbl_rotate(t_stack **a, t_stack **b)
+{
+	ps_rotate(a);
+	ps_rotate(b);
+	return ;
+}
+
+void	ps_revrotate(t_stack **stack)
+{
+	*stack = (*stack)->previous;
+	return ;
+}
+
+void	ps_dbl_revrotate(t_stack **a, t_stack **b)
+{
+	ps_revrotate(a);
+	ps_revrotate(b);
+	return ;
+}

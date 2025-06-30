@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 19:03:56 by kchiang           #+#    #+#             */
-/*   Updated: 2025/06/30 17:18:29 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/06/30 17:31:07 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,9 @@ void	ps_lstclear(t_stack **cdlst);
 void	ps_swap(t_stack **stack);
 void	ps_swapswap(t_stack **a, t_stack **b);
 void	ps_push(t_stack **dest, t_stack **src);
+void	ps_rotate(t_stack **stack);
+void	ps_dbl_rotate(t_stack **a, t_stack **b);
+void	ps_revrotate(t_stack **stack);
+void	ps_dbl_revrotate(t_stack **a, t_stack **b);
 
 #endif
