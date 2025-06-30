@@ -6,17 +6,17 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 10:43:07 by kchiang           #+#    #+#             */
-/*   Updated: 2025/06/30 14:19:43 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/06/30 14:42:04 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*ft_cdlstnew(void *nb)
+t_stack	*ps_cdlstnew(void *nb)
 {
 	t_stack	*new;
 
-	new = ft_calloc(1, sizeof(t_stack));
+	new = ps_calloc(1, sizeof(t_stack));
 	if (!new)
 		return (NULL);
 	new->nb = nb;
@@ -25,7 +25,7 @@ t_stack	*ft_cdlstnew(void *nb)
 	return (new);
 }
 
-void	*ft_cdlstadd_front(t_stack **cdlst, t_stack *new)
+void	*ps_cdlstadd_front(t_stack **cdlst, t_stack *new)
 {
 	t_stack	*last;
 
@@ -40,7 +40,7 @@ void	*ft_cdlstadd_front(t_stack **cdlst, t_stack *new)
 	return ;
 }
 
-void	*ft_cdlstadd_back(t_stack **cdlst, t_stack *new)
+void	*ps_cdlstadd_back(t_stack **cdlst, t_stack *new)
 {
 	t_stack	*last;
 
@@ -54,7 +54,7 @@ void	*ft_cdlstadd_back(t_stack **cdlst, t_stack *new)
 	return ;
 }
 
-void	ft_cdlstdelone(t_stack *cdlst)
+void	ps_cdlstdelone(t_stack *cdlst)
 {
 	t_stack	*prev;
 	t_stack	*junk;
@@ -70,7 +70,7 @@ void	ft_cdlstdelone(t_stack *cdlst)
 	return ;
 }
 
-void	ft_cdlstclear(t_stack **cdlst)
+void	ps_cdlstclear(t_stack **cdlst)
 {
 	t_stack	*junk;
 	t_stack	*first;
