@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 19:03:56 by kchiang           #+#    #+#             */
-/*   Updated: 2025/06/30 14:07:53 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/06/30 14:24:23 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include "libft.h"
 
+/* Macros for action strings.
+ * */
 # define SA		"sa"
 # define SB		"sb"
 # define SS		"ss"
@@ -27,6 +29,8 @@
 # define RRB	"rrb"
 # define RRR	"rrr"
 
+/* Typedef for Circular Doubly Linked List Struct.
+ * */
 typedef struct s_stack
 {
 	int				nb;
@@ -34,6 +38,8 @@ typedef struct s_stack
 	struct s_stack	*next;
 }					t_stack;
 
+/* Functions for Circular Doubly Linked List (cdlst).
+ * */
 t_stack	*ft_cdlstnew(void *nb);
 void	ft_cdlstadd_front(t_stack **cdlst, t_stack *new);
 void	ft_cdlstadd_back(t_stack **cdlst, t_stack *new);
