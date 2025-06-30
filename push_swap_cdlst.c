@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_util_01.c                                :+:      :+:    :+:   */
+/*   push_swap_cdlst.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 10:43:07 by kchiang           #+#    #+#             */
-/*   Updated: 2025/06/30 13:43:40 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/06/30 14:19:43 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ t_stack	*ft_cdlstnew(void *nb)
 	new->nb = nb;
 	new->previous = new;
 	new->next = new;
-return (new);
+	return (new);
 }
 
-t_stack	*ft_cdlstadd_front(t_stack **cdlst, t_stack *new)
+void	*ft_cdlstadd_front(t_stack **cdlst, t_stack *new)
 {
 	t_stack	*last;
 
@@ -40,7 +40,7 @@ t_stack	*ft_cdlstadd_front(t_stack **cdlst, t_stack *new)
 	return ;
 }
 
-t_stack	*ft_cdlstadd_back(t_stack **cdlst, t_stack *new)
+void	*ft_cdlstadd_back(t_stack **cdlst, t_stack *new)
 {
 	t_stack	*last;
 
@@ -67,5 +67,25 @@ void	ft_cdlstdelone(t_stack *cdlst)
 	cdlst->previous = prev;
 	prev->next = cdlst;
 	free(junk);
+	return ;
+}
+
+void	ft_cdlstclear(t_stack **cdlst)
+{
+	t_stack	*junk;
+	t_stack	*first;
+
+	if (!cdlst)
+		return ;
+	first = *cdlst;
+	junk = *cdlst;
+	*cdlst = (*cdlst)->next;
+	free(junk);
+	while (*cdlst != first)
+	{
+		junk = *cdlst;
+		*cdlst = (*cdlst)->next;
+		free(junk);
+	}
 	return ;
 }
