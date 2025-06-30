@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 14:37:26 by kchiang           #+#    #+#             */
-/*   Updated: 2025/06/30 16:30:45 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/06/30 17:12:23 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,16 @@ void	ps_swapswap(t_stack **a, t_stack **b)
 
 void	ps_push(t_stack **dest, t_stack **src)
 {
-	int	nb;
+	t_stack	*tmp;
+	t_stack	*srclast;
 
 	if (!src || !(*src))
 		return ;
-	nb = (*src)->nb;
-	ps_lstdelone(src);
-	ps_lstadd_front(dest, ps_lstnew(nb));
+	tmp = *src;
+	srclast = (*src)->previous;
+	*src = (*src)->next;
+	(*src)->previous = srclast;
+	srclast->next = *src;
+	ps_lstadd_front(dest, tmp);
 	return ;
 }

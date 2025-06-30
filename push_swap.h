@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 19:03:56 by kchiang           #+#    #+#             */
-/*   Updated: 2025/06/30 16:29:49 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/06/30 17:15:16 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,11 @@ void	ps_lstadd_front(t_stack **cdlst, t_stack *new);
 void	ps_lstadd_back(t_stack **cdlst, t_stack *new);
 void	ps_lstdelone(t_stack **cdlst);
 void	ps_lstclear(t_stack **cdlst);
+
+/* Action functions
+ * */
+void	ps_swap(t_stack **stack);
+void	ps_swapswap(t_stack **a, t_stack **b);
+void	ps_push(t_stack **dest, t-stack **src);
 
 #endif
