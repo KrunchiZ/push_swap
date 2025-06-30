@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 19:03:56 by kchiang           #+#    #+#             */
-/*   Updated: 2025/06/30 15:51:50 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/06/30 16:29:49 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,10 @@ typedef struct s_stack
 
 /* Functions for Circular Doubly Linked List (cdlst).
  * */
-t_stack	*ps_cdlstnew(void *nb);
-void	ps_cdlstadd_front(t_stack **cdlst, t_stack *new);
-void	ps_cdlstadd_back(t_stack **cdlst, t_stack *new);
-void	ps_cdlstdelone(t_stack **cdlst);
-void	ps_cdlstclear(t_stack **cdlst);
+t_stack	*ps_lstnew(int nb);
+void	ps_lstadd_front(t_stack **cdlst, t_stack *new);
+void	ps_lstadd_back(t_stack **cdlst, t_stack *new);
+void	ps_lstdelone(t_stack **cdlst);
+void	ps_lstclear(t_stack **cdlst);
 
 #endif
