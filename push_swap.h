@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 19:03:56 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/02 18:07:53 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/02 19:18:05 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,10 @@
 # define RRB	"rrb"
 # define RRR	"rrr"
 
+/* Whitespaces delimiter for ft_split.
+ * */
+# define WHITESPACE	" \t\n\v\f\r"
+
 /* Typedef for Circular Doubly Linked List Struct.
  * */
 typedef struct s_stack
@@ -39,7 +43,7 @@ typedef struct s_stack
 	struct s_stack	*next;
 }					t_stack;
 
-/* Tracker for cheapest push b.
+/* Tracker for cheapest push b for Turk sort.
  * */
 typedef struct s_tracker
 {
@@ -50,7 +54,7 @@ typedef struct s_tracker
 
 typedef struct s_vars
 {
-	char	**arg;
+	char	**args;
 	t_stack	*a;
 	t_stack	*b;
 	size_t	size;
