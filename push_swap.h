@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 19:03:56 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/01 12:20:23 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/02 18:07:53 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,30 @@ typedef struct s_stack
 	struct s_stack	*next;
 }					t_stack;
 
-/* Functions for Circular Doubly Linked List (cdlst).
+/* Tracker for cheapest push b.
+ * */
+typedef struct s_tracker
+{
+	size_t	min_amove;
+	size_t	min_bmove;
+	t_stack	*cheapest_pb;
+}			t_tracker;
+
+typedef struct s_vars
+{
+	char	**arg;
+	t_stack	*a;
+	t_stack	*b;
+	size_t	size;
+}			t_vars;
+
+/* Functions for Circular Doubly Linked List (lst).
  * */
 t_stack	*ps_lstnew(int nb);
-void	ps_lstadd_front(t_stack **cdlst, t_stack *new);
-void	ps_lstadd_back(t_stack **cdlst, t_stack *new);
-void	ps_lstdelone(t_stack **cdlst);
-void	ps_lstclear(t_stack **cdlst);
+void	ps_lstadd_front(t_stack **lst, t_stack *new);
+void	ps_lstadd_back(t_stack **lst, t_stack *new);
+void	ps_lstclear(t_stack **lst);
+size_t	ps_lstsize(t_stack **lst);
 
 /* Action functions
  * */
@@ -56,5 +73,10 @@ void	ps_rotate(t_stack **stack);
 void	ps_dbl_rotate(t_stack **a, t_stack **b);
 void	ps_revrotate(t_stack **stack);
 void	ps_dbl_revrotate(t_stack **a, t_stack **b);
+
+/* Helpers
+ * */
+void	ps_error_abort(void);
+void	ps_parse_arg(int argc, char **argv, t_vars *set);
 
 #endif

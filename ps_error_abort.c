@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_main.c                                          :+:      :+:    :+:   */
+/*   ps_perror.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/01 12:20:51 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/02 18:08:22 by kchiang          ###   ########.fr       */
+/*   Created: 2025/07/01 12:24:35 by kchiang           #+#    #+#             */
+/*   Updated: 2025/07/02 17:42:00 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	ps_perror(void)
 {
-	t_vars	set;
-
-	if (argc < 2)
-		return (0);
-	else
-		ps_parse_arg(argc, argv, &set);
-	return (0);
+	ft_putendl_fd("Error", 2);
+	exit(1);
 }

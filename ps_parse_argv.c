@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_perror.c                                        :+:      :+:    :+:   */
+/*   ps_parse_argv.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/01 12:24:35 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/01 12:38:45 by kchiang          ###   ########.fr       */
+/*   Created: 2025/07/02 17:42:59 by kchiang           #+#    #+#             */
+/*   Updated: 2025/07/02 18:08:20 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ps_perror(void)
+static char **ps_join_arg
+
+void ps_parse_arg(int argc, char **argv, t_vars *set)
 {
-	ft_putendl_fd("Error", 2);
-	exit(1);
+	if (argc == 2)
+		set->arg = ft_split(argv[1], " \t\n\v\f\r");
+	else
+	{
+		argv[1] = ps_join_arg(int argc, char **argv);
+		if (argv[1] == NULL)
+			ps_error_abort();
+	}
+	return ;
 }
