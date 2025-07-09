@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 12:20:51 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/02 18:08:22 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/09 20:02:21 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (0);
 	else
+	{
 		ps_parse_arg(argc, argv, &set);
+		ps_valid_check(set.args);
+	}
 	return (0);
 }
