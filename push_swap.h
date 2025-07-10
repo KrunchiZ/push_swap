@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 19:03:56 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/10 17:18:24 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/10 18:24:31 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ typedef struct s_vars
 	char	**args;
 	t_stack	*a;
 	t_stack	*b;
-	size_t	size;
+	size_t	args_size;
 }			t_vars;
 
 /* Functions for Circular Doubly Linked List (lst).
@@ -84,5 +84,6 @@ void	ps_error_abort(void);
 void	ps_free_args(char **args);
 void	ps_parse_arg(int argc, char **argv, t_vars *set);
 void	ps_valid_check(char **args);
+void	ps_init_stack_a(t_vars *set);
 
 #endif

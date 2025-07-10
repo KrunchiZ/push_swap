@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 12:20:51 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/09 20:02:21 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/10 17:36:37 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,10 @@ int	main(int argc, char **argv)
 		return (0);
 	else
 	{
+		set = (t_vars){0};
 		ps_parse_arg(argc, argv, &set);
 		ps_valid_check(set.args);
+		ps_init_stack_a(&set);
 	}
 	return (0);
 }

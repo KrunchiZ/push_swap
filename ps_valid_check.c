@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 18:58:55 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/10 17:15:49 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/10 18:24:18 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,9 @@ static int	ps_args_not_digit(const char **args)
 {
 	int	i;
 	int	j;
+	int	count;
 
+	count = 0;
 	i = 0;
 	while (args[i])
 	{
@@ -47,6 +49,9 @@ static int	ps_args_not_digit(const char **args)
 			while (args[i][j] == '+' || args[i][j] == '-')
 				j++;
 			if (!ft_isdigit(args[i][j]))
+				return (1);
+			count++;
+			if (count > 10)
 				return (1);
 			j++;
 		}
@@ -83,7 +88,7 @@ static int	ps_args_not_int(const char **args)
 
 	while (*args)
 	{
-		nb = ft_atoi(*args);
+		nb = ft_atoll(*args);
 		if (nb < INT_MIN || nb > INT_MAX)
 			return (1);
 		args++;
