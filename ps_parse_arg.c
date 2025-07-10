@@ -6,12 +6,35 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 17:42:59 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/09 19:03:44 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/10 17:13:29 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+static char	*ps_join_arg(int argc, char **argv);
+
+/* Parse all "word" strings from argv into 
+ * */
+void	ps_parse_arg(int argc, char **argv, t_vars *set)
+{
+	char	*arg;
+
+	if (argc == 2)
+		set->args = ft_split(argv[1], WHITESPACE);
+	else
+	{
+		arg = ps_join_arg(int argc, char **argv);
+		set->args = ft_split(arg, WHITESPACE);
+	}
+	if (!set->args)
+		ps_error_abort();
+	return ;
+}
+
+/*
+ * HELPER FUNCTIONS
+ * */
 static char	*ps_join_arg(int argc, char **argv)
 {
 	char	*arg;
@@ -37,20 +60,4 @@ static char	*ps_join_arg(int argc, char **argv)
 		i++;
 	}
 	return (arg);
-}
-
-void	ps_parse_arg(int argc, char **argv, t_vars *set)
-{
-	char	*arg;
-
-	if (argc == 2)
-		set->args = ft_split(argv[1], WHITESPACE);
-	else
-	{
-		arg = ps_join_arg(int argc, char **argv);
-		set->args = ft_split(arg, WHITESPACE);
-	}
-	if (!set->args)
-		ps_error_abort();
-	return ;
 }

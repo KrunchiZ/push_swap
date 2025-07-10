@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 19:03:56 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/02 19:18:05 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/10 17:18:24 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,8 @@ void	ps_dbl_revrotate(t_stack **a, t_stack **b);
 /* Helpers
  * */
 void	ps_error_abort(void);
+void	ps_free_args(char **args);
 void	ps_parse_arg(int argc, char **argv, t_vars *set);
+void	ps_valid_check(char **args);
 
 #endif

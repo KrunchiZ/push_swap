@@ -6,12 +6,33 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 18:58:55 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/09 20:02:17 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/10 17:15:49 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+static int	ps_args_not_digit(const char **args);
+static int	ps_args_has_dup(const char **args);
+static int	ps_args_not_int(const char **args);
+
+/* Function to check if arg parsed is digit, does not contain duplicate
+ * and does not exceed the range of int type.
+ * */
+void	ps_valid_check(char **args)
+{
+	if (ps_args_not_digit(args) || ps_args_has_dup(args)
+		|| ps_args_not_int(args))
+	{
+		ps_free_args(set->args);
+		ps_error_abort();
+	}
+	return ;
+}
+
+/*
+ * HELPER FUNCTIONS.
+ * */
 static int	ps_args_not_digit(const char **args)
 {
 	int	i;
@@ -58,32 +79,14 @@ static int	ps_args_has_dup(const char **args)
 
 static int	ps_args_not_int(const char **args)
 {
-	long long	nb;
+	t_llong	nb;
 
 	while (*args)
 	{
-		//atoi to check the number range of args
+		nb = ft_atoi(*args);
+		if (nb < INT_MIN || nb > INT_MAX)
+			return (1);
+		args++;
 	}
-}
-
-static void	ps_free_args(char **args)
-{
-	int	i;
-
-	i = 0;
-	while (args[i])
-		free(args[i++]);
-	free(args);
-	return ;
-}
-
-void	ps_valid_check(char **args)
-{
-	if (ps_args_not_digit(args) || ps_args_has_dup(args)
-		|| ps_args_not_int(args))
-	{
-		ps_free_args(set->args);
-		ps_error_abort();
-	}
-	return ;
+	return (0);
 }
