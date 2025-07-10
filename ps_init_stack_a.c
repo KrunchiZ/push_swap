@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 17:26:25 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/10 20:02:50 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/10 20:09:45 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	ps_init_stack_a(t_vars *set)
 	}
 	set->a = a;
 	ps_simplify_a(set);
-	return ;
+	return (ps_free_args(set->args));
 }
 
 static void	ps_simplify_a(t_vars *set)
