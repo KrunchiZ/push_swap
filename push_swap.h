@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 19:03:56 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/11 14:12:00 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/14 13:18:05 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,15 +44,8 @@ typedef struct s_stack
 	struct s_stack	*next;
 }					t_stack;
 
-/* Tracker for cheapest push b for Turk sort.
+/* Typedef for Variable struct.
  * */
-typedef struct s_tracker
-{
-	size_t	min_amove;
-	size_t	min_bmove;
-	t_stack	*cheapest_pb;
-}			t_tracker;
-
 typedef struct s_vars
 {
 	char	**args;
