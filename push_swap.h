@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 19:03:56 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/14 21:03:15 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/14 21:13:24 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,10 @@ void	ps_free_args(char **args);
 void	ps_parse_arg(int argc, char **argv, t_vars *set);
 void	ps_valid_check(char **args);
 void	ps_init_stack_a(t_vars *set);
-void	ps_sort_int_tab(int *tab, size_t size);
+void	ps_sort_stack(t_vars *set);
+void	ps_sort_three(t_stack **a);
+void	ps_a_to_top(t_stack **a, int index);
+void	ps_b_to_top(t_stack **b, int index);
+void	ps_exec_push(t_vars *set, char *action);
 
 #endif
