@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 12:59:36 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/15 01:28:54 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/15 01:35:12 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ps_sort_stack(t_vars *set)
 	}
 }
 
-static int ps_is_sorted(t_stack *stack)
+static int	ps_is_sorted(t_stack *stack)
 {
 	t_stack	*last;
 	t_stack	*next;
@@ -51,12 +51,12 @@ static void	ps_sort_five(t_vars *set)
 	size_t	size;
 
 	index = 0;
-	size = set->args_size
+	size = set->args_size;
 	while (size > 3)
 	{
 		ps_a_to_top(&(set->a), index);
-		if (ps_a_is_sorted(set->a))
-			break;
+		if (ps_is_sorted(set->a))
+			break ;
 		ps_exec_push(set, PB);
 		index++;
 		size--;
@@ -66,4 +66,3 @@ static void	ps_sort_five(t_vars *set)
 		ps_exec_push(set, PA);
 	return ;
 }
-
