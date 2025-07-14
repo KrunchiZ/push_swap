@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 19:03:56 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/14 21:13:24 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/15 01:26:41 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "libft.h"
 # include <limtis.h>
+# include <stdbool.h>
 
 /* Macros for action strings.
  * */
@@ -84,5 +85,8 @@ void	ps_sort_three(t_stack **a);
 void	ps_a_to_top(t_stack **a, int index);
 void	ps_b_to_top(t_stack **b, int index);
 void	ps_exec_push(t_vars *set, char *action);
+void	ps_exec_swap(t_stack **stack, char *action);
+void	ps_exec_rotate_a(t_stack **a, char *action);
+void	ps_exec_rotate_b(t_stack **b, char *action);
 
 #endif
