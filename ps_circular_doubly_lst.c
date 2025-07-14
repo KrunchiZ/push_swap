@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 10:43:07 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/02 15:18:16 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/11 14:11:51 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_stack	*ps_lstnew(int nb)
 	if (!new)
 		return (NULL);
 	new->nb = nb;
+	new->index = 0;
 	new->previous = new;
 	new->next = new;
 	return (new);
