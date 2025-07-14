@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 19:03:56 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/15 01:26:41 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/15 01:38:20 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "libft.h"
-# include <limtis.h>
+# include <limits.h>
 # include <stdbool.h>
 
 /* Macros for action strings.
