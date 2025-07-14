@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 14:37:26 by kchiang           #+#    #+#             */
-/*   Updated: 2025/06/30 17:12:23 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/15 01:41:09 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ps_swap(t_stack **stack)
 {
-	t_stack	second;
-	t_stack	third;
+	t_stack	*second;
+	t_stack	*third;
 
 	if (!stack || !(*stack) || (*stack)->next == *stack)
 		return ;

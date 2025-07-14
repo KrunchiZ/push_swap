@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 20:50:27 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/15 01:18:18 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/15 02:57:22 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,29 +15,32 @@
 static int	ps_min_at_top(t_stack *a);
 static int	ps_min_in_middle(t_stack *a);
 
-void	ps_sort_three(t_stack **a)
+void	ps_sort_three(t_vars *set)
 {
 	t_stack	*last;
 	t_stack	*sec;
+	t_stack	*a;
 
-	last = (*a)->previous;
-	sec = (*a)->next;
-	if (ps_min_at_top(*a))
+	a = set->a;
+	last = a->previous;
+	sec = a->next;
+	if (ps_min_at_top(a))
 	{
-		ps_exec_swap(a, SA);
-		ps_exec_rotate_a(a, RA);
+		ps_exec_swap(set, SA);
+		ps_exec_rotate_a(set, RA);
 	}
-	else if (ps_min_in_middle(*a) && (*a)->index > last->index)
-		ps_exec_rotate_a(a, RA);
-	else if (ps_min_in_middle(*a) && (*a)->index < last->index)
-		ps_exec_swap(a, SA);
-	else if ((*a)->index > sec->index)
+	else if (ps_min_in_middle(a) && a->index > last->index)
+		ps_exec_rotate_a(set, RA);
+	else if (ps_min_in_middle(a) && a->index < last->index)
+		ps_exec_swap(set, SA);
+	else if (a->index > sec->index)
 	{
-		ps_exec_swap(a, SA);
-		ps_exec_rotate_a(a, RRA);
+		ps_exec_swap(set, SA);
+		ps_exec_rotate_a(set, RRA);
 	}
 	else
-		ps_exec_rotate_a(a, RRA);
+		ps_exec_rotate_a(set, RRA);
+	set->a = a;
 	return ;
 }
 

@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 12:20:51 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/14 12:32:52 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/15 02:58:47 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ int	main(int argc, char **argv)
 		ps_init_stack_a(&set);
 		ps_sort_stack(&set);
 	}
+	ps_lstclear(&(set.a));
 	return (0);
 }

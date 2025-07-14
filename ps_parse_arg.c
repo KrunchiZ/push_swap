@@ -6,14 +6,14 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 17:42:59 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/10 19:15:54 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/15 03:47:39 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 static char		*ps_join_arg(int argc, char **argv);
-static size_t	ps_count_args(const char **argv);
+static size_t	ps_count_args(char **argv);
 
 /* Parse all "word" strings from argv into 
  * */
@@ -25,8 +25,9 @@ void	ps_parse_arg(int argc, char **argv, t_vars *set)
 		set->args = ft_split(argv[1], WHITESPACE);
 	else
 	{
-		arg = ps_join_arg(int argc, char **argv);
+		arg = ps_join_arg(argc, argv);
 		set->args = ft_split(arg, WHITESPACE);
+		free(arg);
 	}
 	if (!set->args)
 		ps_error_abort();
@@ -64,7 +65,7 @@ static char	*ps_join_arg(int argc, char **argv)
 	return (arg);
 }
 
-static size_t	ps_count_args(const char **args)
+static size_t	ps_count_args(char **args)
 {
 	size_t	count;
 

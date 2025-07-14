@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 10:43:07 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/11 14:11:51 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/15 03:00:02 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_stack	*ps_lstnew(int nb)
 {
 	t_stack	*new;
 
-	new = ps_calloc(1, sizeof(t_stack));
+	new = ft_calloc(1, sizeof(t_stack));
 	if (!new)
 		return (NULL);
 	new->nb = nb;
@@ -26,32 +26,40 @@ t_stack	*ps_lstnew(int nb)
 	return (new);
 }
 
-void	*ps_lstadd_front(t_stack **lst, t_stack *new)
+void	ps_lstadd_front(t_stack **lst, t_stack *new)
 {
 	t_stack	*last;
 
 	if (!lst || !new)
 		return ;
-	last = (*lst)->previous;
-	last->next = new;
-	new->next = *lst;
-	new->previous = last;
-	(*lst)->previous = new;
+	if (*lst)
+	{
+		last = (*lst)->previous;
+		last->next = new;
+		new->next = *lst;
+		new->previous = last;
+		(*lst)->previous = new;
+	}
 	*lst = new;
 	return ;
 }
 
-void	*ps_lstadd_back(t_stack **lst, t_stack *new)
+void	ps_lstadd_back(t_stack **lst, t_stack *new)
 {
 	t_stack	*last;
 
 	if (!lst || !new)
 		return ;
-	last = (*lst)->previous;
-	last->next = new;
-	new->next = *lst;
-	new->previous = last;
-	(*lst)->previous = new;
+	if (*lst)
+	{
+		last = (*lst)->previous;
+		last->next = new;
+		new->next = *lst;
+		new->previous = last;
+		(*lst)->previous = new;
+	}
+	else
+		*lst = new;
 	return ;
 }
 
@@ -60,18 +68,21 @@ void	ps_lstclear(t_stack **lst)
 	t_stack	*junk;
 	t_stack	*first;
 
-	if (!lst)
+	if (!lst || !(*lst))
 		return ;
 	first = *lst;
 	junk = *lst;
 	*lst = (*lst)->next;
 	free(junk);
+	junk = NULL;
 	while (*lst != first)
 	{
 		junk = *lst;
 		*lst = (*lst)->next;
 		free(junk);
+		junk = NULL;
 	}
+	*lst = NULL;
 	return ;
 }
 

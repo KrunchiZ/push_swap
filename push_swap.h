@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 19:03:56 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/15 01:38:20 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/15 02:58:20 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,12 +81,12 @@ void	ps_parse_arg(int argc, char **argv, t_vars *set);
 void	ps_valid_check(char **args);
 void	ps_init_stack_a(t_vars *set);
 void	ps_sort_stack(t_vars *set);
-void	ps_sort_three(t_stack **a);
-void	ps_a_to_top(t_stack **a, int index);
-void	ps_b_to_top(t_stack **b, int index);
+void	ps_sort_three(t_vars *set);
+void	ps_a_to_top(t_vars *set, int index);
+void	ps_b_to_top(t_vars *set, int index);
 void	ps_exec_push(t_vars *set, char *action);
-void	ps_exec_swap(t_stack **stack, char *action);
-void	ps_exec_rotate_a(t_stack **a, char *action);
-void	ps_exec_rotate_b(t_stack **b, char *action);
+void	ps_exec_swap(t_vars *set, char *action);
+void	ps_exec_rotate_a(t_vars *set, char *action);
+void	ps_exec_rotate_b(t_vars *set, char *action);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 19:24:30 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/15 00:42:30 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/15 03:08:15 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,25 @@ static int	ps_count_rra(t_stack *a, int index);
 /* Rotate the node with index to the top using RA or RRA, whichever
  * is faster, using ps_count_ra/rra to determine the number of moves.
  * */
-void	ps_a_to_top(t_stack **a, int index)
+void	ps_a_to_top(t_vars *set, int index)
 {
-	int	ra_count;
-	int	rra_count;
+	int		ra_count;
+	int		rra_count;
+	t_stack	*a;
 
-	if ((*a)->index != index)
+	a = set->a;
+	if (a->index != index)
 	{
-		ra_count = ps_count_ra(*a, index);
-		rra_count = ps_count_rra(*a, index);
-		if (ra_count < rra_count)
-			ps_exec_rotate_a(a, RA);
-		else
-			ps_exec_rotate_a(a, RRA);
+		ra_count = ps_count_ra(a, index);
+		rra_count = ps_count_rra(a, index);
+		while (a->index != index)
+		{
+			if (ra_count < rra_count)
+				ps_exec_rotate_a(set, RA);
+			else
+				ps_exec_rotate_a(set, RRA);
+			a = set->a;
+		}
 	}
 	return ;
 }
