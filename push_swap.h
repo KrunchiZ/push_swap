@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 19:03:56 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/15 18:43:50 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/15 20:57:36 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ typedef struct s_stack
 	struct s_stack	*next;
 }					t_stack;
 
-/* Typedef for Rotate counter.
+/* Typedef for Rotate counter struct.
  * */
 typedef struct s_counter
 {
@@ -58,6 +58,15 @@ typedef struct s_counter
 	int	ra_rrb;
 	int	rra_rb;
 }		t_counter;
+
+/* Typedef for struct tracking the fastest index.
+ * */
+typedef struct s_tracker
+{
+	int	count;
+	int	src_index;
+	int	dst_index;
+}		t_tracker;
 
 /* Typedef for Variable struct.
  * */
