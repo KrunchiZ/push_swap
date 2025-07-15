@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 20:50:27 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/15 18:17:05 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/15 18:46:10 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,19 +54,19 @@ static void	ps_sort_three(t_vars *set)
 	if (ps_min_at_top(a))
 	{
 		ps_exec_swap(set, SA);
-		ps_exec_rotate_a(set, RA);
+		ps_exec_rotate(set, RA);
 	}
 	else if (ps_min_in_middle(a) && a->index > last->index)
-		ps_exec_rotate_a(set, RA);
+		ps_exec_rotate(set, RA);
 	else if (ps_min_in_middle(a) && a->index < last->index)
 		ps_exec_swap(set, SA);
 	else if (a->index > sec->index)
 	{
 		ps_exec_swap(set, SA);
-		ps_exec_rotate_a(set, RRA);
+		ps_exec_rotate(set, RRA);
 	}
 	else
-		ps_exec_rotate_a(set, RRA);
+		ps_exec_rotate(set, RRA);
 	set->a = a;
 	return ;
 }

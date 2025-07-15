@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 17:44:41 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/15 17:46:31 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/15 18:44:02 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ static int	ps_count_revrotate(t_stack *a, int index);
 
 /* Calculate the fastest rotate moves for given index.
  * */
-void	ps_init_counter(t_counter *count, int index_a, int index_b)
+void	ps_init_counter(t_counter *count, t_vars *set, int index_a, int index_b)
 {
-	count->ra = ps_count_rotate(a, index_a);
-	count->rra = ps_count_revrotate(a, index_a);
-	count->rb = ps_count_rotate(b, index_b);
-	count->rrb = ps_count_revrotate(b, index_b);
+	count->ra = ps_count_rotate(set->a, index_a);
+	count->rra = ps_count_revrotate(set->a, index_a);
+	count->rb = ps_count_rotate(set->b, index_b);
+	count->rrb = ps_count_revrotate(set->b, index_b);
 	if (count->ra >= count->rb)
 		count->rr = count->ra;
 	else
@@ -31,8 +31,8 @@ void	ps_init_counter(t_counter *count, int index_a, int index_b)
 		count->rrr = count->rra;
 	else
 		count->rrr = count->rrb;
-	count->ra_rrb = count.ra + count.rrb;
-	count->rra_rb = count.rra + count.rb;
+	count->ra_rrb = count->ra + count->rrb;
+	count->rra_rb = count->rra + count->rb;
 	return ;
 }
 
