@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 10:43:07 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/15 03:00:02 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/15 14:33:51 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,40 +26,50 @@ t_stack	*ps_lstnew(int nb)
 	return (new);
 }
 
-void	ps_lstadd_front(t_stack **lst, t_stack *new)
+void	ps_lstadd_front(t_stack **lst, t_stack *node)
 {
 	t_stack	*last;
 
-	if (!lst || !new)
+	if (!lst || !node)
 		return ;
 	if (*lst)
 	{
 		last = (*lst)->previous;
-		last->next = new;
-		new->next = *lst;
-		new->previous = last;
-		(*lst)->previous = new;
+		last->next = node;
+		node->next = *lst;
+		node->previous = last;
+		(*lst)->previous = node;
+		*lst = node;
 	}
-	*lst = new;
+	else
+	{
+		node->previous = node;
+		node->next = node;
+		*lst = node;
+	}
 	return ;
 }
 
-void	ps_lstadd_back(t_stack **lst, t_stack *new)
+void	ps_lstadd_back(t_stack **lst, t_stack *node)
 {
 	t_stack	*last;
 
-	if (!lst || !new)
+	if (!lst || !node)
 		return ;
 	if (*lst)
 	{
 		last = (*lst)->previous;
-		last->next = new;
-		new->next = *lst;
-		new->previous = last;
-		(*lst)->previous = new;
+		last->next = node;
+		node->next = *lst;
+		node->previous = last;
+		(*lst)->previous = node;
 	}
 	else
-		*lst = new;
+	{
+		node->previous = node;
+		node->next = node;
+		*lst = node;
+	}
 	return ;
 }
 

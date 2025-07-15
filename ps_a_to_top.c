@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 19:24:30 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/15 03:08:15 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/15 14:36:01 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ps_a_to_top(t_vars *set, int index)
 		rra_count = ps_count_rra(a, index);
 		while (a->index != index)
 		{
-			if (ra_count < rra_count)
+			if (ra_count <= rra_count)
 				ps_exec_rotate_a(set, RA);
 			else
 				ps_exec_rotate_a(set, RRA);

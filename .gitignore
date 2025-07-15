@@ -2,3 +2,6 @@ libft
 a.out
 main.c
 test.c
+push_swap
+libft.a
+output.txt
