@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 19:03:56 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/15 17:45:32 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/15 18:02:28 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,11 +96,11 @@ void	ps_valid_check(char **args);
 void	ps_init_stack_a(t_vars *set);
 void	ps_sort_stack(t_vars *set);
 void	ps_sort_three(t_vars *set);
-void	ps_a_to_top(t_vars *set, int index);
-void	ps_b_to_top(t_vars *set, int index);
+void	ps_ab_to_top(t_vars *set, int index_a, int index_b);
+void	ps_init_counter(t_counter *count, int index_a, int index_b);
 void	ps_exec_push(t_vars *set, char *action);
 void	ps_exec_swap(t_vars *set, char *action);
 void	ps_exec_rotate(t_vars *set, char *action);
-void	ps_init_counter(t_counter *count, int index_a, int index_b);
+void	ps_exec_dbl_rotate(t_vars *set, char *action);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 19:24:30 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/15 17:47:17 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/15 18:07:04 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 
 static void	ps_exec_rr_ra_rb(int ra, int rb);
 static void	ps_exec_rrr_rra_rrb(int rra, int rrb);
+static void	ps_exec_ra_rrb(int ra, int rrb);
+static void	ps_exec_rra_rb(int rra, int rb);
 
-/* Rotate the node with index to the top using RA or RRA, whichever
- * is faster, using ps_count_ra/rra to determine the number of moves.
+/* Rotate the node with index to the top using the fastest way.
+ * Enhanced insertion sort / Turk sort.
  * */
 void	ps_ab_to_top(t_vars *set, int index_a, int index_b)
 {
@@ -33,12 +35,9 @@ void	ps_ab_to_top(t_vars *set, int index_a, int index_b)
 		else if ((count.rrr <= count.ra_rrb) && (count.rrr <= count.rra_rb))
 			ps_exec_rrr_rra_rrb(count.rra, count.rrb);
 		else if (count.ra_rrb <= count.rra_rb)
-		{
-		}// exec RA + RRB
+			ps_exec_ra_rrb(count.ra, count.rrb);
 		else
-		{
-		}// exec RRA + RB
-
+			ps_exec_rra_rb(count.rra, count.rb);
 	}
 	return ;
 }
@@ -46,7 +45,7 @@ void	ps_ab_to_top(t_vars *set, int index_a, int index_b)
 static void	ps_exec_rr_ra_rb(int ra, int rb)
 {
 	while (ra-- > 0 && rb-- > 0)
-		ps_exec_rotate(set, RR);
+		ps_exec_dbl_rotate(set, RR);
 	while (ra-- > 0)
 		ps_exec_rotate(set, RA);
 	while (rb-- > 0)
@@ -57,10 +56,28 @@ static void	ps_exec_rr_ra_rb(int ra, int rb)
 static void	ps_exec_rrr_rra_rrb(int rra, int rrb)
 {
 	while (rra-- > 0 && rrb-- > 0)
-		ps_exec_rotate(set, RRR);
+		ps_exec_dbl_rotate(set, RRR);
 	while (rra-- > 0)
 		ps_exec_rotate(set, RRA);
 	while (rrb-- > 0)
+		ps_exec_rotate(set, RRB);
+	return ;
+}
+
+static void	ps_exec_ra_rrb(int ra, int rrb)
+{
+	while (ra-- > 0)
+		ps_exec_rotate(set, RA);
+	while (rrb-- > 0)
+		ps_exec_rotate(set, RRB);
+	return ;
+}
+
+static void	ps_exec_rra_rb(int rra, int rb)
+{
+	while (rra-- > 0)
+		ps_exec_rotate(set, RA);
+	while (rb-- > 0)
 		ps_exec_rotate(set, RRB);
 	return ;
 }
