@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 20:34:57 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/15 02:52:10 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/15 17:42:51 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	ps_exec_swap(t_vars *set, char *action)
 	return ;
 }
 
-void	ps_exec_rotate_a(t_vars *set, char *action)
+void	ps_exec_rotate(t_vars *set, char *action)
 {
 	if (!ft_strncmp(RA, action, 3))
 	{
@@ -54,12 +54,7 @@ void	ps_exec_rotate_a(t_vars *set, char *action)
 		ps_revrotate(&(set->a));
 		ft_putendl_fd(RRA, STDOUT_FILENO);
 	}
-	return ;
-}
-
-void	ps_exec_rotate_b(t_vars *set, char *action)
-{
-	if (!ft_strncmp(RB, action, 3))
+	else if (!ft_strncmp(RB, action, 3))
 	{
 		ps_rotate(&(set->b));
 		ft_putendl_fd(RB, STDOUT_FILENO);

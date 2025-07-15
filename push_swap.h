@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 19:03:56 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/15 02:58:20 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/15 17:45:32 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,20 @@ typedef struct s_stack
 	struct s_stack	*previous;
 	struct s_stack	*next;
 }					t_stack;
+
+/* Typedef for Rotate counter.
+ * */
+typedef struct s_counter
+{
+	int	ra;
+	int	rb;
+	int	rra;
+	int	rrb;
+	int	rr;
+	int	rrr;
+	int	ra_rrb;
+	int	rra_rb;
+}		t_counter;
 
 /* Typedef for Variable struct.
  * */
@@ -86,7 +100,7 @@ void	ps_a_to_top(t_vars *set, int index);
 void	ps_b_to_top(t_vars *set, int index);
 void	ps_exec_push(t_vars *set, char *action);
 void	ps_exec_swap(t_vars *set, char *action);
-void	ps_exec_rotate_a(t_vars *set, char *action);
-void	ps_exec_rotate_b(t_vars *set, char *action);
+void	ps_exec_rotate(t_vars *set, char *action);
+void	ps_init_counter(t_counter *count, int index_a, int index_b);
 
 #endif

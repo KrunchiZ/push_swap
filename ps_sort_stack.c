@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 12:59:36 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/15 14:55:43 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/15 16:30:53 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ void	ps_sort_stack(t_vars *set)
 	if (!ps_is_sorted(set->a))
 	{
 		if (set->args_size <= 5)
-			ps_sort_five(set);
-//		else
-//			ps_selection_sort(set);
+			ps_selection_sort(set);
+		else
+			ps_enhanced_insertion_sort(set);
 	}
 	return ;
 }
@@ -46,20 +46,22 @@ static int	ps_is_sorted(t_stack *stack)
 	return (true);
 }
 
-static void	ps_sort_five(t_vars *set)
+static void	ps_selection_sort(t_vars *set)
 {
-	int		index;
+	int		index_a;
+	int		index_b;
 	size_t	size;
 
-	index = 0;
+	index_a = 0;
 	size = set->args_size;
 	while (size > 3)
 	{
-		ps_a_to_top(set, index);
+		index_b = index_a - 1;
+		ps_ab_to_top(set, index_a, index_b);
 		if (ps_is_sorted(set->a))
 			break ;
 		ps_exec_push(set, PB);
-		index++;
+		index_a++;
 		size--;
 	}
 	ps_sort_three(set);
