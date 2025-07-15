@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 19:24:30 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/15 18:43:26 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/15 19:17:27 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,15 @@ void	ps_ab_to_top(t_vars *set, int index_a, int index_b)
 	t_stack		*a;
 
 	a = set->a;
+	count = (t_counter){0};
 	if (a->index != index_a)
 	{
 		ps_init_counter(&count, set, index_a, index_b);
-		if ((count.rr <= count.rrr) && (count.rr <= count.ra_rrb)
-			&& (count.rr <= count.rra_rb))
+		if (count.rr && (count.rr <= count.rrr)
+			&& (count.rr <= count.ra_rrb) && (count.rr <= count.rra_rb))
 			ps_exec_rr_ra_rb(set, count.ra, count.rb);
-		else if ((count.rrr <= count.ra_rrb) && (count.rrr <= count.rra_rb))
+		else if (count.rrr && (count.rrr <= count.ra_rrb)
+				&& (count.rrr <= count.rra_rb))
 			ps_exec_rrr_rra_rrb(set, count.rra, count.rrb);
 		else if (count.ra_rrb <= count.rra_rb)
 			ps_exec_ra_rrb(set, count.ra, count.rrb);
@@ -76,8 +78,8 @@ static void	ps_exec_ra_rrb(t_vars *set, int ra, int rrb)
 static void	ps_exec_rra_rb(t_vars *set, int rra, int rb)
 {
 	while (rra-- > 0)
-		ps_exec_rotate(set, RA);
+		ps_exec_rotate(set, RRA);
 	while (rb-- > 0)
-		ps_exec_rotate(set, RRB);
+		ps_exec_rotate(set, RB);
 	return ;
 }

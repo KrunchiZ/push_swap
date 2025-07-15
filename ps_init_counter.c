@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 17:44:41 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/15 18:56:38 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/15 19:17:28 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ void	ps_init_counter(t_counter *count, t_vars *set, int index_a, int index_b)
 	count->rra = ps_count_revrotate(set->a, index_a);
 	count->rb = ps_count_rotate(set->b, index_b);
 	count->rrb = ps_count_revrotate(set->b, index_b);
-	if (count->ra >= count->rb)
+	if (count->ra && count->rb && count->ra >= count->rb)
 		count->rr = count->ra;
-	else
+	else if (count->ra && count->rb)
 		count->rr = count->rb;
-	if (count->rra >= count ->rrb)
+	if (count->rra && count->rrb && count->rra >= count->rrb)
 		count->rrr = count->rra;
-	else
+	else if (count->rra && count->rrb)
 		count->rrr = count->rrb;
 	count->ra_rrb = count->ra + count->rrb;
 	count->rra_rb = count->rra + count->rb;
