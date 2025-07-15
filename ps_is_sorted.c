@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_sort_stack.c                                    :+:      :+:    :+:   */
+/*   ps_is_sorted.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/14 12:59:36 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/15 18:15:07 by kchiang          ###   ########.fr       */
+/*   Created: 2025/07/15 18:14:37 by kchiang           #+#    #+#             */
+/*   Updated: 2025/07/15 18:14:52 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* Sorting function that utilizes a modified version of selection sort
- * using min and max index.
- * */
-void	ps_sort_stack(t_vars *set)
+int	ps_is_sorted(t_stack *stack)
 {
-	if (!ps_is_sorted(set->a))
+	t_stack	*last;
+	t_stack	*next;
+
+	last = stack->previous;
+	while (stack != last)
 	{
-		if (set->args_size <= 5)
-			ps_selection_sort(set);
-		else
-			ps_enhanced_insertion_sort(set);
+		next = stack->next;
+		if (stack->index > next->index)
+			return (false);
+		stack = stack->next;
 	}
-	return ;
+	return (true);
 }
