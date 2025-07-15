@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 17:44:41 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/15 18:44:02 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/15 18:50:46 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static int	ps_count_rotate(t_stack *stack, int index)
 	int	count;
 
 	count = 0;
-	while (stack->index != index)
+	while (stack && stack->index != index)
 	{
 		ps_rotate(&stack);
 		count++;
@@ -54,7 +54,7 @@ static int	ps_count_revrotate(t_stack *stack, int index)
 	int	count;
 
 	count = 0;
-	while (stack->index != index)
+	while (stack && stack->index != index)
 	{
 		ps_revrotate(&stack);
 		count++;
