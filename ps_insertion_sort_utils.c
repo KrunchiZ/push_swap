@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 18:26:54 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/16 19:46:44 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/16 22:33:40 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,15 @@ static int	ps_count_to_top(t_vars set, int src_index, int dst_index);
 
 /* Functions to find the index with the shortest move to push to dest stack.
  * */
-void	ps_get_fastest_a_index(t_vars set, t_tracker *trkr)
+void	ps_get_fastest_a_index(t_vars set, t_tracker *trkr, char src)
 {
-	int			current_count;
-	int			next_index;
-	char		src;
-	t_stack		*first;
+	int		current_count;
+	int		next_index;
+	t_stack	*first;
 
-	src = 'a';
 	trkr->src_index = (set.a)->index;
 	trkr->dst_index = ps_find_next_index(set.b, trkr->src_index);
-	trkr->count = ps_count_to_top(set, trkr->src_index, trkr->dst_index);
+	trkr->count = ps_count_to_top(set, src, trkr->src_index, trkr->dst_index);
 	first = set.a;
 	set.a = (set.a)->next;
 	while (set.a != first)
@@ -45,17 +43,15 @@ void	ps_get_fastest_a_index(t_vars set, t_tracker *trkr)
 	return ;
 }
 
-void	ps_get_fastest_b_index(t_vars set, t_tracker *trkr)
+void	ps_get_fastest_b_index(t_vars set, t_tracker *trkr, char src)
 {
-	int			current_count;
-	int			next_index;
-	char		src;
-	t_stack		*first;
+	int		current_count;
+	int		next_index;
+	t_stack	*first;
 
-	src = 'b';
 	trkr->src_index = (set.b)->index;
 	trkr->dst_index = ps_find_next_index(set.a, trkr->src_index);
-	trkr->count = ps_count_to_top(set, trkr->src_index, trkr->dst_index);
+	trkr->count = ps_count_to_top(set, src, trkr->src_index, trkr->dst_index);
 	first = set.b;
 	set.b = (set.b)->next;
 	while (set.b != first)

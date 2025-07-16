@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 19:24:30 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/16 15:01:13 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/16 22:29:05 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,16 @@ static void	ps_exec_rra_rb(t_vars *set, int rra, int rb);
 /* Rotate the node with index to the top using the fastest way.
  * Enhanced insertion sort / Turk sort.
  * */
-void	ps_ab_to_top(t_vars *set, int index_a, int index_b)
+void	ps_ab_to_top(t_vars *set, char src, t_tracker tracker)
 {
 	t_counter	count;
 	t_stack		*a;
 
 	a = set->a;
-	count = (t_counter){0};
-	if (a->index != index_a)
+	count = (t_counter){.src = src};
+	if (a->index != src_index)
 	{
-		ps_init_counter(&count, set, index_a, index_b);
+		ps_init_counter(&count, set, tracker.src_index, tracker.dst_index);
 		if (count.rr && (count.rr <= count.rrr)
 			&& (count.rr <= count.ra_rrb) && (count.rr <= count.rra_rb))
 			ps_exec_rr_ra_rb(set, count.ra, count.rb);
