@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 18:26:54 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/17 00:41:59 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/17 01:14:26 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,18 +73,22 @@ void	ps_get_fastest_b_index(t_vars set, t_tracker *trkr, char src)
 static int	ps_find_next_a_index(t_stack *a, int b_index)
 {
 	t_stack	*first;
+	int		min_index;
 
 	first = a;
+	min_index = a->index;
 	if (b_index > a->previous->index && b_index < a->index)
 		return (a->index);
 	a = a->next;
 	while (a != first)
 	{
+		if (a->index < min_index)
+			min_index = a->index;
 		if (b_index > a->previous->index && b_index < a->index)
 			return (a->index);
 		a = a->next;
 	}
-	return (first->index);
+	return (min_index);
 }
 
 static int	ps_find_next_b_index(t_stack *b, int a_index)

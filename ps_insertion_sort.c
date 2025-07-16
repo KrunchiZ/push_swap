@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 18:26:15 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/17 00:06:20 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/17 01:16:21 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ static void	ps_return_stack_b(t_vars *set, size_t size, char src)
 		ps_exec_push(set, PA);
 		size++;
 	}
+	src = 'a';
 	tracker.src_index = 0;
 	tracker.dst_index = tracker.src_index - 1;
 	ps_ab_to_top(set, src, tracker);
