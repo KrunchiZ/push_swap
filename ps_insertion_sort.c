@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 18:26:15 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/16 13:21:01 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/16 14:23:59 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,15 @@ void	ps_insertion_sort(t_vars *set)
 		size--;
 	}
 	ps_three_args_sort(set);
+	while (size < set->args_size)
+	{
+	}
 }
 
 static void	ps_get_fastest_index(t_vars set, t_tracker *trkr)
 {
 	int			current_count;
-	int			next_b_index;
+	int			new_b_index;
 	t_stack		*first;
 
 	trkr->src_index = (set.a)->index;
@@ -92,7 +95,7 @@ static int	ps_count_to_top(t_vars set, int index_a, int index_b)
 
 	a = set->a;
 	count = (t_counter){0};
-	ps_init_counter(&count, set, index_a, index_b);
+	ps_init_counter(&count, &set, index_a, index_b);
 	if (count.rr && (count.rr <= count.rrr)
 		&& (count.rr <= count.ra_rrb) && (count.rr <= count.rra_rb))
 		return (count.rr);
