@@ -6,15 +6,13 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 18:26:15 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/16 16:58:42 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/16 19:01:37 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	ps_get_fastest_index(t_vars set, t_tracker *trkr);
-static int	ps_find_next_index(t_stack *stack, int index_a);
-static int	ps_count_to_top(t_vars set, int index_a, int index_b);
+static void	ps_return_stack_b(t_vars *set, size_t size);
 
 /* Insertion sort for arguments that are more than 5.
  * Instead of just the top node in stack a, this variant finds
@@ -31,75 +29,29 @@ void	ps_insertion_sort(t_vars *set)
 	ps_exec_push(set, PB);
 	if (ps_is_sorted(set->b))
 		ps_exec_swap(set, SB);
-	ps_get_fastest_a_index(*set, &tracker);
 	while (size > 3)
 	{
+		ps_get_fastest_a_index(*set, &tracker);
 		ps_ab_to_top(set, tracker.src_index, tracker.dst_index);
 		ps_exec_push(set, PB);
-		ps_get_fastest_a_index(*set, &tracker);
 		size--;
 	}
 	ps_three_args_sort(set);
-	ps_return_stack_b(set, size)
-}
-
-static void	ps_get_fastest_a_index(t_vars set, t_tracker *trkr)
-{
-	int			current_count;
-	int			next_index;
-	t_stack		*first;
-
-	trkr->src_index = (set.a)->index;
-	trkr->dst_index = ps_find_next_index(set.b, trkr->src_index);
-	trkr->count = ps_count_to_top(set, trkr->src_index, trkr->dst_index);
-	first = set.a;
-	set.a = (set.a)->next;
-	while (set.a != first)
-	{
-		next_index = ps_find_next_index(set.b, (set.a)->index);
-		current_count = ps_count_to_top(set, (set.a)->index, next_index);
-		if (current_count < trkr->count)
-		{
-			trkr->src_index = (set.a)->index;
-			trkr->count = current_count;
-			trkr->dst_index = next_index;
-		}
-		set.a = (set.a)->next;
-	}
+	ps_return_stack_b(set, size);
+	ps_sort_stack_a(set);
 	return ;
 }
 
-static int	ps_find_next_index(t_stack *stack, int src_index)
+static void	ps_return_stack_b(t_vars *set, size_t size)
 {
-	t_stack	*first;
+	t_tracker	tracker;
 
-	first = stack;
-	if (src_index < (stack->previous)->index && src_index > stack->index)
-		return (stack->index);
-	stack = stack->next;
-	while (stack != first)
+	while (size < set->args_size)
 	{
-		if (src_index < (stack->previous)->index && src_index > stack->index)
-			return (stack->index);
-		stack = stack->next;
+		ps_get_fastest_b_index(*set, &tracker);
+		ps_ab_to_top(set, tracker.src_index, tracker.dst_index);
+		ps_exec_push(set, PA);
+		size++;
 	}
-	return (first->index);
-}
-
-static int	ps_count_to_top(t_vars set, int src_index, int dst_index)
-{
-	t_counter	count;
-
-	count = (t_counter){0};
-	ps_init_counter(&count, &set, src_index, dst_index);
-	if (count.rr && (count.rr <= count.rrr)
-		&& (count.rr <= count.ra_rrb) && (count.rr <= count.rra_rb))
-		return (count.rr);
-	else if (count.rrr && (count.rrr <= count.ra_rrb)
-		&& (count.rrr <= count.rra_rb))
-		return (count.rrr);
-	else if (count.ra_rrb <= count.rra_rb)
-		return (count.ra_rrb);
-	else
-		return (count.rra_rb);
+	return ;
 }

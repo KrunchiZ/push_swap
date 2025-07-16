@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 17:44:41 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/15 19:17:28 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/16 19:30:33 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,23 @@ static int	ps_count_revrotate(t_stack *a, int index);
 
 /* Calculate the fastest rotate moves for given index.
  * */
-void	ps_init_counter(t_counter *count, t_vars *set, int index_a, int index_b)
+void	ps_init_counter(t_counter *count, t_vars *set
+					 	, int src_index, int dst_index)
 {
-	count->ra = ps_count_rotate(set->a, index_a);
-	count->rra = ps_count_revrotate(set->a, index_a);
-	count->rb = ps_count_rotate(set->b, index_b);
-	count->rrb = ps_count_revrotate(set->b, index_b);
+	if (count->src == 'a')
+	{
+		count->ra = ps_count_rotate(set->a, src_index);
+		count->rra = ps_count_revrotate(set->a, src_index);
+		count->rb = ps_count_rotate(set->b, dst_index);
+		count->rrb = ps_count_revrotate(set->b, dst_index);
+	}
+	else if (count->src == 'b')
+	{
+		count->ra = ps_count_rotate(set->a, dst_index);
+		count->rra = ps_count_revrotate(set->a, dst_index);
+		count->rb = ps_count_rotate(set->b, src_index);
+		count->rrb = ps_count_revrotate(set->b, src_index);
+	}
 	if (count->ra && count->rb && count->ra >= count->rb)
 		count->rr = count->ra;
 	else if (count->ra && count->rb)
