@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 19:24:30 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/15 20:07:00 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/16 15:01:13 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	ps_ab_to_top(t_vars *set, int index_a, int index_b)
 			&& (count.rr <= count.ra_rrb) && (count.rr <= count.rra_rb))
 			ps_exec_rr_ra_rb(set, count.ra, count.rb);
 		else if (count.rrr && (count.rrr <= count.ra_rrb)
-				&& (count.rrr <= count.rra_rb))
+			&& (count.rrr <= count.rra_rb))
 			ps_exec_rrr_rra_rrb(set, count.rra, count.rrb);
 		else if (count.ra_rrb <= count.rra_rb)
 			ps_exec_ra_rrb(set, count.ra, count.rrb);

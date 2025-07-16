@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 18:26:15 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/16 14:30:19 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/16 15:01:02 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ static int	ps_count_to_top(t_vars set, int index_a, int index_b)
 		&& (count.rr <= count.ra_rrb) && (count.rr <= count.rra_rb))
 		return (count.rr);
 	else if (count.rrr && (count.rrr <= count.ra_rrb)
-			&& (count.rrr <= count.rra_rb))
+		&& (count.rrr <= count.rra_rb))
 		return (count.rrr);
 	else if (count.ra_rrb <= count.rra_rb)
 		return (count.ra_rrb);

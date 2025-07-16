@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 12:59:36 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/15 19:31:18 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/16 14:38:04 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,14 @@ void	ps_sort_stack(t_vars *set)
 {
 	if (!ps_is_sorted(set->a))
 	{
-		if (set->args_size <= 5)
+		if (set->args_size == 1)
+			return ;
+		else if (set->args_size == 2)
+		{
+			if (!ps_is_sorted(set->a))
+				ps_exec_swap(set, SA);
+		}
+		else if (set->args_size <= 5)
 			ps_selection_sort(set);
 		else
 			ps_insertion_sort(set);
