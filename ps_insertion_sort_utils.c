@@ -6,14 +6,14 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 18:26:54 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/16 22:33:40 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/16 22:47:00 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 static int	ps_find_next_index(t_stack *stack, int src_index);
-static int	ps_count_to_top(t_vars set, int src_index, int dst_index);
+static int	ps_count_to_top(t_vars set, char src, int src_index, int dst_index);
 
 /* Functions to find the index with the shortest move to push to dest stack.
  * */

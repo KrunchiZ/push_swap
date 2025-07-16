@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 19:24:30 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/16 22:29:05 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/16 22:47:44 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ps_ab_to_top(t_vars *set, char src, t_tracker tracker)
 
 	a = set->a;
 	count = (t_counter){.src = src};
-	if (a->index != src_index)
+	if (a->index != tracker.src_index)
 	{
 		ps_init_counter(&count, set, tracker.src_index, tracker.dst_index);
 		if (count.rr && (count.rr <= count.rrr)

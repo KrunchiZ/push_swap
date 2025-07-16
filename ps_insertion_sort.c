@@ -6,13 +6,13 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 18:26:15 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/16 22:29:47 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/16 22:50:20 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	ps_return_stack_b(t_vars *set, size_t size);
+static void	ps_return_stack_b(t_vars *set, size_t size, char src);
 
 /* Insertion sort for arguments that are more than 5.
  * Instead of just the top node in stack a, this variant finds
@@ -20,7 +20,6 @@ static void	ps_return_stack_b(t_vars *set, size_t size);
  * */
 void	ps_insertion_sort(t_vars *set)
 {
-	int			index_a;
 	char		src;
 	size_t		size;
 	t_tracker	tracker;
