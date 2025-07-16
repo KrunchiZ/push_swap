@@ -6,13 +6,13 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 13:17:16 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/16 13:17:46 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/16 13:20:23 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ps_sort_three(t_vars *set)
+void	ps_three_args_sort(t_vars *set)
 {
 	t_stack	*last;
 	t_stack	*sec;

@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 20:50:27 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/16 13:17:02 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/16 13:20:50 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ps_selection_sort(t_vars *set)
 		index_a++;
 		size--;
 	}
-	ps_sort_three(set);
+	ps_three_args_sort(set);
 	while (size++ < set->args_size)
 		ps_exec_push(set, PA);
 	return ;

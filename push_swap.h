@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 19:03:56 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/15 20:57:36 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/16 13:20:34 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,7 @@ void	ps_sort_stack(t_vars *set);
 int		ps_is_sorted(t_stack *stack);
 void	ps_selection_sort(t_vars *set);
 void	ps_insertion_sort(t_vars *set);
+void	ps_three_args_sort(t_vars *set);
 void	ps_ab_to_top(t_vars *set, int index_a, int index_b);
 void	ps_init_counter(t_counter *count, t_vars *set, int index_a, int index_b);
 void	ps_exec_push(t_vars *set, char *action);

@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 18:26:15 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/16 13:18:16 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/16 13:21:01 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	ps_insertion_sort(t_vars *set)
 		ps_get_fastest_index(*set, &tracker);
 		size--;
 	}
-	ps_sort_three(set);
+	ps_three_args_sort(set);
 }
 
 static void	ps_get_fastest_index(t_vars set, t_tracker *trkr)
