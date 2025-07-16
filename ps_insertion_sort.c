@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 18:26:15 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/16 22:50:20 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/17 00:06:20 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,25 +24,24 @@ void	ps_insertion_sort(t_vars *set)
 	size_t		size;
 	t_tracker	tracker;
 
-	size = set->args_size;
 	src = 'a';
 	ps_exec_push(set, PB);
 	ps_exec_push(set, PB);
 	if (ps_is_sorted(set->b))
 		ps_exec_swap(set, SB);
+	size = set->args_size - 2;
 	while (size > 3)
 	{
 		ps_get_fastest_a_index(*set, &tracker, src);
 		ps_ab_to_top(set, src, tracker);
 		ps_exec_push(set, PB);
+		if ((set->b)->index < (set->b)->next->index)
+			ps_exec_rotate(set, RB);
 		size--;
 	}
 	ps_three_args_sort(set);
 	src = 'b';
 	ps_return_stack_b(set, size, src);
-	tracker.src_index = 0;
-	tracker.dst_index = -1;
-	ps_ab_to_top(set, src, tracker);
 	return ;
 }
 
@@ -57,5 +56,8 @@ static void	ps_return_stack_b(t_vars *set, size_t size, char src)
 		ps_exec_push(set, PA);
 		size++;
 	}
+	tracker.src_index = 0;
+	tracker.dst_index = tracker.src_index - 1;
+	ps_ab_to_top(set, src, tracker);
 	return ;
 }

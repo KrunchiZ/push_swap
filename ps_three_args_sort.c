@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 13:17:16 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/16 19:53:27 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/16 23:47:14 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ps_three_args_sort(t_vars *set)
 		ps_exec_rotate(set, RRA);
 	else if (a->index > a->previous->index && a->index > a->next->index)
 		ps_exec_rotate(set, RA);
-	if (a->index > a->next->index)
+	if ((set->a)->index > (set->a)->next->index)
 		ps_exec_swap(set, SA);
 	return ;
 }

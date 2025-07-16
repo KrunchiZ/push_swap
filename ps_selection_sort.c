@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 20:50:27 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/16 22:49:38 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/16 23:03:11 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ void	ps_selection_sort(t_vars *set)
 		if (ps_is_sorted(set->a))
 			break ;
 		ps_exec_push(set, PB);
+		if ((set->b)->index < (set->b)->next->index)
+			ps_exec_rotate(set, RB);
 		tracker.src_index++;
 		size--;
 	}

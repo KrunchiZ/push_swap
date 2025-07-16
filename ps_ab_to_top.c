@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 19:24:30 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/16 22:47:44 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/17 00:45:06 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,20 @@ static void	ps_exec_rra_rb(t_vars *set, int rra, int rb);
 void	ps_ab_to_top(t_vars *set, char src, t_tracker tracker)
 {
 	t_counter	count;
-	t_stack		*a;
+	int			index;
 
-	a = set->a;
+	if (src == 'a')
+		index = (set->a)->index;
+	else
+		index = (set->b)->index;
 	count = (t_counter){.src = src};
-	if (a->index != tracker.src_index)
+	if (index != tracker.src_index)
 	{
 		ps_init_counter(&count, set, tracker.src_index, tracker.dst_index);
-		if (count.rr && (count.rr <= count.rrr)
-			&& (count.rr <= count.ra_rrb) && (count.rr <= count.rra_rb))
+		if (count.rr <= count.rrr
+			&& count.rr <= count.ra_rrb && count.rr <= count.rra_rb)
 			ps_exec_rr_ra_rb(set, count.ra, count.rb);
-		else if (count.rrr && (count.rrr <= count.ra_rrb)
-			&& (count.rrr <= count.rra_rb))
+		else if (count.rrr <= count.ra_rrb && count.rrr <= count.rra_rb)
 			ps_exec_rrr_rra_rrb(set, count.rra, count.rrb);
 		else if (count.ra_rrb <= count.rra_rb)
 			ps_exec_ra_rrb(set, count.ra, count.rrb);
@@ -46,8 +48,12 @@ void	ps_ab_to_top(t_vars *set, char src, t_tracker tracker)
 
 static void	ps_exec_rr_ra_rb(t_vars *set, int ra, int rb)
 {
-	while (ra-- > 0 && rb-- > 0)
+	while (ra > 0 && rb > 0)
+	{
 		ps_exec_dbl_rotate(set, RR);
+		ra--;
+		rb--;
+	}
 	while (ra-- > 0)
 		ps_exec_rotate(set, RA);
 	while (rb-- > 0)
@@ -57,8 +63,12 @@ static void	ps_exec_rr_ra_rb(t_vars *set, int ra, int rb)
 
 static void	ps_exec_rrr_rra_rrb(t_vars *set, int rra, int rrb)
 {
-	while (rra-- > 0 && rrb-- > 0)
+	while (rra > 0 && rrb > 0)
+	{
 		ps_exec_dbl_rotate(set, RRR);
+		rra--;
+		rrb--;
+	}
 	while (rra-- > 0)
 		ps_exec_rotate(set, RRA);
 	while (rrb-- > 0)
