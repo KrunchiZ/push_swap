@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 17:44:41 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/16 19:30:33 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/16 19:55:08 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int	ps_count_revrotate(t_stack *a, int index);
 /* Calculate the fastest rotate moves for given index.
  * */
 void	ps_init_counter(t_counter *count, t_vars *set
-					 	, int src_index, int dst_index)
+					, int src_index, int dst_index)
 {
 	if (count->src == 'a')
 	{
@@ -36,7 +36,7 @@ void	ps_init_counter(t_counter *count, t_vars *set
 	}
 	if (count->ra && count->rb && count->ra >= count->rb)
 		count->rr = count->ra;
-	else if (count->ra && count->rb)
+	else if (count->ra && count->rb && count->rb > count->ra)
 		count->rr = count->rb;
 	if (count->rra && count->rrb && count->rra >= count->rrb)
 		count->rrr = count->rra;

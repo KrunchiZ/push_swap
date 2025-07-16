@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 13:17:16 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/16 15:34:03 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/16 19:53:27 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,3 @@ void	ps_three_args_sort(t_vars *set)
 		ps_exec_swap(set, SA);
 	return ;
 }
-	

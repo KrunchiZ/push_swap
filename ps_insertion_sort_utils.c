@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 18:26:54 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/16 19:39:41 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/16 19:46:44 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,12 +78,12 @@ static int	ps_find_next_index(t_stack *stack, int src_index)
 	t_stack	*first;
 
 	first = stack;
-	if (src_index < (stack->previous)->index && src_index > stack->index)
+	if (src_index < stack->previous->index && src_index > stack->index)
 		return (stack->index);
 	stack = stack->next;
 	while (stack != first)
 	{
-		if (src_index < (stack->previous)->index && src_index > stack->index)
+		if (src_index < stack->previous->index && src_index > stack->index)
 			return (stack->index);
 		stack = stack->next;
 	}
