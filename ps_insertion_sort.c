@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 18:26:15 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/16 15:01:02 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/16 16:58:42 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,24 +31,22 @@ void	ps_insertion_sort(t_vars *set)
 	ps_exec_push(set, PB);
 	if (ps_is_sorted(set->b))
 		ps_exec_swap(set, SB);
-	ps_get_fastest_index(*set, &tracker);
+	ps_get_fastest_a_index(*set, &tracker);
 	while (size > 3)
 	{
 		ps_ab_to_top(set, tracker.src_index, tracker.dst_index);
 		ps_exec_push(set, PB);
-		ps_get_fastest_index(*set, &tracker);
+		ps_get_fastest_a_index(*set, &tracker);
 		size--;
 	}
 	ps_three_args_sort(set);
-	while (size < set->args_size)
-	{
-	}
+	ps_return_stack_b(set, size)
 }
 
-static void	ps_get_fastest_index(t_vars set, t_tracker *trkr)
+static void	ps_get_fastest_a_index(t_vars set, t_tracker *trkr)
 {
 	int			current_count;
-	int			new_b_index;
+	int			next_index;
 	t_stack		*first;
 
 	trkr->src_index = (set.a)->index;
@@ -58,42 +56,42 @@ static void	ps_get_fastest_index(t_vars set, t_tracker *trkr)
 	set.a = (set.a)->next;
 	while (set.a != first)
 	{
-		new_b_index = ps_find_next_index(set.b, (set.a)->index);
-		current_count = ps_count_to_top(set, (set.a)->index, new_b_index);
+		next_index = ps_find_next_index(set.b, (set.a)->index);
+		current_count = ps_count_to_top(set, (set.a)->index, next_index);
 		if (current_count < trkr->count)
 		{
 			trkr->src_index = (set.a)->index;
 			trkr->count = current_count;
-			trkr->dst_index = new_b_index;
+			trkr->dst_index = next_index;
 		}
 		set.a = (set.a)->next;
 	}
 	return ;
 }
 
-static int	ps_find_next_index(t_stack *stack, int index_a)
+static int	ps_find_next_index(t_stack *stack, int src_index)
 {
 	t_stack	*first;
 
 	first = stack;
-	if (index_a < (stack->previous)->index && index_a > stack->index)
+	if (src_index < (stack->previous)->index && src_index > stack->index)
 		return (stack->index);
 	stack = stack->next;
 	while (stack != first)
 	{
-		if (index_a < (stack->previous)->index && index_a > stack->index)
+		if (src_index < (stack->previous)->index && src_index > stack->index)
 			return (stack->index);
 		stack = stack->next;
 	}
 	return (first->index);
 }
 
-static int	ps_count_to_top(t_vars set, int index_a, int index_b)
+static int	ps_count_to_top(t_vars set, int src_index, int dst_index)
 {
 	t_counter	count;
 
 	count = (t_counter){0};
-	ps_init_counter(&count, &set, index_a, index_b);
+	ps_init_counter(&count, &set, src_index, dst_index);
 	if (count.rr && (count.rr <= count.rrr)
 		&& (count.rr <= count.ra_rrb) && (count.rr <= count.rra_rb))
 		return (count.rr);
