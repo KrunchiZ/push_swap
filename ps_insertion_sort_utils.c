@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 18:26:54 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/17 01:14:26 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/17 01:31:33 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,18 +94,22 @@ static int	ps_find_next_a_index(t_stack *a, int b_index)
 static int	ps_find_next_b_index(t_stack *b, int a_index)
 {
 	t_stack	*first;
+	int		max_index;
 
 	first = b;
+	max_index = b->index;
 	if (a_index < b->previous->index && a_index > b->index)
 		return (b->index);
 	b = b->next;
 	while (b != first)
 	{
+		if (b->index > max_index)
+			max_index = b->index;
 		if (a_index < b->previous->index && a_index > b->index)
 			return (b->index);
 		b = b->next;
 	}
-	return (first->index);
+	return (max_index);
 }
 
 static int	ps_count_to_top(t_vars set, char src, int src_index, int dst_index)
