@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 18:26:15 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/16 14:23:59 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/16 14:30:19 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ static void	ps_get_fastest_index(t_vars set, t_tracker *trkr)
 	{
 		new_b_index = ps_find_next_index(set.b, (set.a)->index);
 		current_count = ps_count_to_top(set, (set.a)->index, new_b_index);
-		if (current_count < track->count)
+		if (current_count < trkr->count)
 		{
 			trkr->src_index = (set.a)->index;
 			trkr->count = current_count;
@@ -91,9 +91,7 @@ static int	ps_find_next_index(t_stack *stack, int index_a)
 static int	ps_count_to_top(t_vars set, int index_a, int index_b)
 {
 	t_counter	count;
-	t_stack		*a;
 
-	a = set->a;
 	count = (t_counter){0};
 	ps_init_counter(&count, &set, index_a, index_b);
 	if (count.rr && (count.rr <= count.rrr)
