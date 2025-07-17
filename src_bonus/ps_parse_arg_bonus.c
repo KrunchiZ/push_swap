@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 17:42:59 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/17 15:44:19 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/17 15:45:21 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ps_parse_arg(int argc, char **argv, t_vars *set)
 	if (!set->args)
 		ps_error_abort();
 	set->args_size = ps_count_args(set->args);
-	if (set->args_size = 0)
+	if (set->args_size == 0)
 		ps_error_abort();
 	return ;
 }
