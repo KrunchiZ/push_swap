@@ -32,11 +32,11 @@ all: $(NAME)
 bonus: $(BONUS)
 
 $(NAME): $(PS_SRC) $(LIBFT)
-	@$(CC) $(CFLAGS) $(IFLAGS) $(PS_DIR) $(LIBFT) -o push_swap
+	@$(CC) $(CFLAGS) $(IFLAGS) $^ -o $@
 	@echo "Compiling $(GREEN)$(NAME)$(WHITE)..."
 
 $(BONUS): $(BS_SRC) $(PS_SRC) $(LIBFT)
-	@$(CC) $(CFLAGS) $(IFLAGS) $(BS_DIR) $(PS_DIR) $(LIBFT) -o checker
+	@$(CC) $(CFLAGS) $(IFLAGS) $^ -o $@
 	@echo "Compiling $(GREEN)bonus$(WHITE)..."
 
 $(LIBFT):
