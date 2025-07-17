@@ -50,10 +50,12 @@ $(LIBFT):
 	@cp $(addprefix $(LIBFT_DIR), $(LIBFT)) $(LIBFT)
 
 fclean: clean
-	@rm -f $(NAME) $(BONUS) $(LIBFT)
-	@echo "Removing program and library files..."
+	@rm -f $(NAME) $(BONUS)
+	@echo "Removing program files..."
 
 clean:
 	@make -C $(LIBFT_DIR) clean
+	@rm -f $(LIBFT)
+	@echo "Removing $(GREEN)$(LIBFT)$(WHITE)..."
 
 re: fclean all
