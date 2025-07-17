@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_valid_check_bonus.c                             :+:      :+:    :+:   */
+/*   ps_valid_check.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 18:58:55 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/17 15:05:04 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/17 16:20:50 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker_bonus.h"
+#include "push_swap.h"
 
 static int	ps_args_not_digit(char **args);
 static int	ps_args_has_dup(char **args);
@@ -46,7 +46,7 @@ static int	ps_args_not_digit(char **args)
 		j = 0;
 		while (args[i][j])
 		{
-			while (args[i][j] == '+' || args[i][j] == '-')
+			if (!count && (args[i][j] == '+' || args[i][j] == '-'))
 				j++;
 			if (!ft_isdigit(args[i][j]))
 				return (true);
@@ -74,6 +74,8 @@ static int	ps_args_has_dup(char **args)
 		while (args[j])
 		{
 			if (!ft_strncmp(args[i], args[j], cmplen))
+				return (true);
+			if (ft_atoi(args[i]) == ft_atoi(args[j]))
 				return (true);
 			j++;
 		}
