@@ -5,16 +5,19 @@ LIBFT		= libft.a
 CC		= cc
 CFLAGS	= -Wall -Wextra -Werror -g3
 IFLAGS	= -Ilibft/include -Iinclude
+
+PS_MAIN = \
+		  ps_main.c
 PS_SRC	= \
 		  ps_ab_to_top.c	ps_action_rotate.c	ps_action_swappush.c		\
 		  ps_circular_doubly_lst.c	ps_error_abort.c	ps_exec_action.c	\
 		  ps_free_args.c	ps_init_counter.c	ps_init_stack_a.c			\
 		  ps_insertion_sort.c	ps_insertion_sort_utils.c	ps_is_sorted.c	\
-		  ps_main.c	ps_parse_arg.c	ps_selection_sort.c	ps_sort_stack.c		\
+		  ps_parse_arg.c	ps_selection_sort.c	ps_sort_stack.c				\
 		  ps_three_args_sort.c	ps_valid_check.c
 BS_SRC	= \
-		  checker.c	\
-		  checker_utils.c
+		  checker_bonus.c	\
+		  checker_utils_bonus.c
 
 LIBFT_DIR	= libft/
 PS_DIR		= src_push_swap/
@@ -31,7 +34,7 @@ WHITE	= \e[0m
 all: $(NAME)
 bonus: $(BONUS)
 
-$(NAME): $(PS_SRC) $(LIBFT)
+$(NAME): $(PS_SRC) $(PS_MAIN) $(LIBFT)
 	@$(CC) $(CFLAGS) $(IFLAGS) $^ -o $@
 	@echo "Compiling $(GREEN)$(NAME)$(WHITE)..."
 
