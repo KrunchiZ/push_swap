@@ -9,15 +9,17 @@ IFLAGS	= -Ilibft/include -Iinclude
 PS_MAIN = \
 		  ps_main.c
 PS_SRC	= \
-		  ps_ab_to_top.c	ps_action_rotate.c	ps_action_swappush.c		\
-		  ps_circular_doubly_lst.c	ps_error_abort.c	ps_exec_action.c	\
-		  ps_free_args.c	ps_init_counter.c	ps_init_stack_a.c			\
-		  ps_insertion_sort.c	ps_insertion_sort_utils.c	ps_is_sorted.c	\
-		  ps_parse_arg.c	ps_selection_sort.c	ps_sort_stack.c				\
-		  ps_three_args_sort.c	ps_valid_check.c
+		  ps_ab_to_top.c			ps_action_rotate.c	ps_action_swappush.c	\
+		  ps_circular_doubly_lst.c	ps_error_abort.c	ps_exec_action.c		\
+		  ps_free_args.c			ps_init_counter.c	ps_init_stack_a.c		\
+		  ps_is_sorted.c			ps_parse_arg.c		ps_selection_sort.c		\
+		  ps_three_args_sort.c		ps_sort_stack.c		ps_valid_check.c		\
+		  ps_insertion_sort.c		ps_insertion_sort_utils.c
 BS_SRC	= \
-		  checker_bonus.c	\
-		  checker_utils_bonus.c
+		  checker_bonus.c	checker_utils_bonus.c	ps_action_rotate_bonus.c		\
+		  ps_action_swappush_bonus.c				ps_circular_doubly_lst_bonus.c	\
+		  ps_error_abort_bonus.c	ps_free_args_bonus.c	ps_init_stack_a_bonus.c	\
+		  ps_is_sorted_bonus.c		ps_parse_arg_bonus.c	ps_valid_check_bonus.c
 
 LIBFT_DIR	= libft/
 PS_DIR		= src_push_swap/
