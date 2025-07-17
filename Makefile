@@ -55,7 +55,7 @@ fclean: clean
 
 clean:
 	@make -C $(LIBFT_DIR) clean
-	@rm -f $(LIBFT)
+	@rm -f $(LIBFT) $(LIBFT_DIR)/$(LIBFT)
 	@echo "Removing $(GREEN)$(LIBFT)$(WHITE)..."
 
 re: fclean all
