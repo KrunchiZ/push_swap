@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 19:03:56 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/16 22:41:34 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/17 17:46:51 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,7 +122,6 @@ void	ps_init_counter(t_counter *count, t_vars *set,
 
 /* Helpers for insertion sort.
  * */
-void	ps_get_fastest_a_index(t_vars set, t_tracker *trkr, char src);
-void	ps_get_fastest_b_index(t_vars set, t_tracker *trkr, char src);
+void	ps_get_fastest_index(t_vars set, t_tracker *trkr, char src);
 
 #endif

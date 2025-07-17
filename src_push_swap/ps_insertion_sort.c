@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 18:26:15 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/17 17:04:17 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/17 17:44:01 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static void	ps_return_stack_b(t_vars *set, size_t size)
 	src = 'b';
 	while (size < set->args_size)
 	{
-		ps_get_fastest_b_index(*set, &tracker, src);
+		ps_get_fastest_index(*set, &tracker, src);
 		ps_ab_to_top(set, src, tracker);
 		ps_exec_push(set, PA);
 		size++;
