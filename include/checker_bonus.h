@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 19:03:56 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/17 15:08:48 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/17 23:08:07 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ typedef struct s_stack
 typedef struct s_vars
 {
 	char	**args;
-	char	**action;
+	char	*action;
 	t_stack	*a;
 	t_stack	*b;
 	size_t	args_size;

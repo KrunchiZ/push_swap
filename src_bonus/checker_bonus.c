@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 12:20:51 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/17 15:03:07 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/17 23:07:26 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	main(int argc, char **argv)
 		ps_parse_arg(argc, argv, &set);
 		ps_valid_check(set.args);
 		ps_init_stack_a(&set);
-		//run get next line to read instructions from stdin.
+		ps_sort_stack(set);
 	}
 	ps_lstclear(&(set.a));
 	return (0);
