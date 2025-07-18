@@ -16,7 +16,7 @@ PS_SRC	= \
 		  ps_three_args_sort.c		ps_sort_stack.c		ps_valid_check.c		\
 		  ps_insertion_sort.c		ps_insertion_sort_utils.c
 BS_SRC	= \
-		  checker_bonus.c	checker_utils_bonus.c	ps_action_rotate_bonus.c		\
+		  checker_bonus.c	ps_sort_stack_bonus.c	ps_action_rotate_bonus.c		\
 		  ps_action_swappush_bonus.c				ps_circular_doubly_lst_bonus.c	\
 		  ps_error_abort_bonus.c	ps_free_args_bonus.c	ps_init_stack_a_bonus.c	\
 		  ps_is_sorted_bonus.c		ps_parse_arg_bonus.c	ps_valid_check_bonus.c
