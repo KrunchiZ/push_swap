@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 14:18:13 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/18 16:33:04 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/18 17:19:49 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	ps_sort_stack(t_vars *set)
 		{
 			free(set->action);
 			ps_lstclear(&(set->a));
+			ps_lstclear(&(set->b));
 			ps_error_abort();
 		}
 		ps_exec_action(set, set->action);
