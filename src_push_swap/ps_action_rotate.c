@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 17:20:04 by kchiang           #+#    #+#             */
-/*   Updated: 2025/06/30 17:30:00 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/18 16:55:14 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 void	ps_rotate(t_stack **stack)
 {
-	*stack = (*stack)->next;
+	if (*stack)
+		*stack = (*stack)->next;
 	return ;
 }
 
@@ -27,7 +28,8 @@ void	ps_dbl_rotate(t_stack **a, t_stack **b)
 
 void	ps_revrotate(t_stack **stack)
 {
-	*stack = (*stack)->previous;
+	if (*stack)
+		*stack = (*stack)->previous;
 	return ;
 }
 

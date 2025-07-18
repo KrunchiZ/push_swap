@@ -3,5 +3,6 @@ a.out
 main.c
 test.c
 push_swap
+checker
 libft.a
 output.txt
