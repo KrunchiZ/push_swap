@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 14:18:13 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/18 20:15:11 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/18 20:47:50 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,16 @@ static int	ps_action_is_invalid(char *action)
 	size_t	len;
 
 	len = ft_strlen(action) - 1;
+	if (len == 0 && *action == '\n')
+		return (true);
+	else if (len == 0)
+		return (true);
 	if (!ft_strncmp(PA, action, len) || !ft_strncmp(PB, action, len)
 		|| !ft_strncmp(SA, action, len) || !ft_strncmp(SB, action, len)
 		|| !ft_strncmp(RA, action, len) || !ft_strncmp(RRA, action, len)
 		|| !ft_strncmp(RB, action, len) || !ft_strncmp(RRB, action, len)
 		|| !ft_strncmp(RR, action, len) || !ft_strncmp(RRR, action, len)
 		|| !ft_strncmp(SS, action, len))
-		return (false);
-	if (len == 0 && *action == '\n')
 		return (false);
 	return (true);
 }
