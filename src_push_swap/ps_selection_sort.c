@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 20:50:27 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/17 15:51:38 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/18 19:33:02 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	ps_selection_sort(t_vars *set)
 	if (size > 5)
 		size = 5;
 	tracker.dst_index = -1;
+	tracker.count = size;
 	while (size > 3)
 	{
 		tracker.src_index = ps_get_min_index(set->a);
@@ -40,9 +41,8 @@ void	ps_selection_sort(t_vars *set)
 	}
 	if (size == 3)
 		ps_three_args_sort(set);
-	while (size++ < 5)
+	while ((int)size++ < tracker.count)
 		ps_exec_push(set, PA);
-	return ;
 }
 
 static int	ps_get_min_index(t_stack *stack)
