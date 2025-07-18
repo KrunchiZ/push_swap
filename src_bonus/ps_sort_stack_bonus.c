@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 14:18:13 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/18 20:47:50 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/18 21:32:28 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,16 +70,16 @@ static void	ps_exec_action(t_vars *set, char *action)
 		ps_swap(&(set->b));
 	else if (!ft_strncmp(SS, action, len))
 		ps_swapswap(&(set->a), &(set->b));
-	else if (!ft_strncmp(RA, action, len))
-		ps_rotate(&(set->a));
-	else if (!ft_strncmp(RRA, action, len))
-		ps_revrotate(&(set->a));
-	else if (!ft_strncmp(RB, action, len))
-		ps_rotate(&(set->b));
-	else if (!ft_strncmp(RRB, action, len))
-		ps_revrotate(&(set->b));
 	else if (!ft_strncmp(RR, action, len))
 		ps_dbl_rotate(&(set->a), &(set->b));
+	else if (!ft_strncmp(RA, action, len))
+		ps_rotate(&(set->a));
+	else if (!ft_strncmp(RB, action, len))
+		ps_rotate(&(set->b));
+	else if (!ft_strncmp(RRA, action, len))
+		ps_revrotate(&(set->a));
+	else if (!ft_strncmp(RRB, action, len))
+		ps_revrotate(&(set->b));
 	else if (!ft_strncmp(RRR, action, len))
 		ps_dbl_revrotate(&(set->a), &(set->b));
 }
