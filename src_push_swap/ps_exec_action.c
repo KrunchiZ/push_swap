@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 20:34:57 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/15 18:00:27 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/18 15:37:48 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	ps_exec_swap(t_vars *set, char *action)
 		ps_swap(&(set->a));
 		ft_putendl_fd(SA, STDOUT_FILENO);
 	}
-	if (!ft_strncmp(SB, action, 2))
+	else if (!ft_strncmp(SB, action, 2))
 	{
 		ps_swap(&(set->b));
 		ft_putendl_fd(SB, STDOUT_FILENO);
