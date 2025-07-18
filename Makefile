@@ -40,7 +40,7 @@ $(NAME): $(PS_SRC) $(PS_MAIN) $(LIBFT)
 	@$(CC) $(CFLAGS) $(IFLAGS) $^ -o $@
 	@echo "Compiling $(GREEN)$(NAME)$(WHITE)..."
 
-$(BONUS): $(BS_SRC) $(PS_SRC) $(LIBFT)
+$(BONUS): $(BS_SRC) $(LIBFT)
 	@$(CC) $(CFLAGS) $(IFLAGS) $^ -o $@
 	@echo "Compiling $(GREEN)bonus$(WHITE)..."
 
