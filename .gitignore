@@ -7,3 +7,4 @@ checker
 checker_linux
 libft.a
 output.txt
+test.sh
