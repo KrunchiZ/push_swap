@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 12:20:51 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/18 16:32:43 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/18 16:39:59 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	main(int argc, char **argv)
 
 static void	ps_print_message(t_vars *set)
 {
-	if (ps_is_sorted(set->a) && ps_lstsize(set->b) == 0)
+	if (ps_is_sorted(set->a) && ps_lstsize(&(set->b)) == 0)
 		ft_printf("OK\n");
 	else
 		ft_printf("KO\n");
