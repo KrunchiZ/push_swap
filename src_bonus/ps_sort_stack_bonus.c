@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 14:18:13 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/18 17:19:49 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/18 20:15:11 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,8 @@ static int	ps_action_is_invalid(char *action)
 		|| !ft_strncmp(SA, action, len) || !ft_strncmp(SB, action, len)
 		|| !ft_strncmp(RA, action, len) || !ft_strncmp(RRA, action, len)
 		|| !ft_strncmp(RB, action, len) || !ft_strncmp(RRB, action, len)
-		|| !ft_strncmp(RR, action, len) || !ft_strncmp(RRR, action, len))
+		|| !ft_strncmp(RR, action, len) || !ft_strncmp(RRR, action, len)
+		|| !ft_strncmp(SS, action, len))
 		return (false);
 	if (len == 0 && *action == '\n')
 		return (false);
@@ -65,6 +66,8 @@ static void	ps_exec_action(t_vars *set, char *action)
 		ps_swap(&(set->a));
 	else if (!ft_strncmp(SB, action, len))
 		ps_swap(&(set->b));
+	else if (!ft_strncmp(SS, action, len))
+		ps_swapswap(&(set->a), &(set->b));
 	else if (!ft_strncmp(RA, action, len))
 		ps_rotate(&(set->a));
 	else if (!ft_strncmp(RRA, action, len))
@@ -77,5 +80,4 @@ static void	ps_exec_action(t_vars *set, char *action)
 		ps_dbl_rotate(&(set->a), &(set->b));
 	else if (!ft_strncmp(RRR, action, len))
 		ps_dbl_revrotate(&(set->a), &(set->b));
-	return ;
 }
