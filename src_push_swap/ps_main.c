@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 12:20:51 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/15 02:58:47 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/28 16:12:58 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main(int argc, char **argv)
 	t_vars	set;
 
 	if (argc < 2)
-		return (0);
+		return (EXIT_SUCCESS);
 	else
 	{
 		set = (t_vars){0};
@@ -27,5 +27,5 @@ int	main(int argc, char **argv)
 		ps_sort_stack(&set);
 	}
 	ps_lstclear(&(set.a));
-	return (0);
+	return (EXIT_SUCCESS);
 }

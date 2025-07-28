@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 12:20:51 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/18 16:39:59 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/28 16:13:28 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(int argc, char **argv)
 	t_vars	set;
 
 	if (argc < 2)
-		return (0);
+		return (EXIT_SUCCESS);
 	else
 	{
 		set = (t_vars){0};
@@ -30,7 +30,7 @@ int	main(int argc, char **argv)
 		ps_print_message(&set);
 	}
 	ps_lstclear(&(set.a));
-	return (0);
+	return (EXIT_SUCCESS);
 }
 
 static void	ps_print_message(t_vars *set)
