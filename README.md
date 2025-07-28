@@ -23,6 +23,10 @@ In this project, I've explored the concept of using doubly circular linked lists
 	- rrb (reverse rotate b): Shift down all elements of stack b by 1. The last element becomes the first one.
 	- rrr : rra and rrb at the same time.
 
+### Bonus
+
+Make a checker that checks the validity of the output of the push swap program.
+
 ### Resources
 
 - [libft](https://www.github.com/KrunchiZ/libft)
