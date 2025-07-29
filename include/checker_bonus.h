@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 19:03:56 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/18 16:34:43 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/07/29 15:35:49 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include "libft.h"
 # include <limits.h>
-# include <stdbool.h>
 
 /* Macros for action strings.
  * */
