@@ -6,7 +6,7 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 19:03:56 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/29 15:35:42 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/08/27 16:36:38 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,6 @@
 # define RRA	"rra"
 # define RRB	"rrb"
 # define RRR	"rrr"
-
-/* Whitespaces delimiter for ft_split.
- * */
-# define WHITESPACE	" \t\n\v\f\r"
 
 /* Typedef for Circular Doubly Linked List Struct.
  * */
