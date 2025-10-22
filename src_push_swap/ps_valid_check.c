@@ -6,10 +6,13 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 18:58:55 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/17 16:20:50 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/10/22 20:28:39 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdbool.h>
+#include <limits.h>
+#include "libft.h"
 #include "push_swap.h"
 
 static int	ps_args_not_digit(char **args);
@@ -86,7 +89,7 @@ static int	ps_args_has_dup(char **args)
 
 static int	ps_args_not_int(char **args)
 {
-	t_llong	nb;
+	long long	nb;
 
 	while (*args)
 	{

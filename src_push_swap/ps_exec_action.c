@@ -6,10 +6,12 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 20:34:57 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/18 15:37:48 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/10/22 20:15:50 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
+#include "libft.h"
 #include "push_swap.h"
 
 void	ps_exec_push(t_vars *set, char *action)

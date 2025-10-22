@@ -6,10 +6,13 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 12:24:35 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/28 16:12:23 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/10/22 20:15:00 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
+#include <unistd.h>
+#include "libft.h"
 #include "push_swap.h"
 
 void	ps_error_abort(void)

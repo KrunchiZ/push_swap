@@ -6,10 +6,12 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 10:43:07 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/15 14:33:51 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/10/22 20:14:06 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
+#include "libft.h"
 #include "push_swap.h"
 
 t_stack	*ps_lstnew(int nb)

@@ -6,10 +6,11 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 17:26:25 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/15 03:33:38 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/10/22 20:16:57 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include "push_swap.h"
 
 static void	ps_sort_index(t_stack *stack);
