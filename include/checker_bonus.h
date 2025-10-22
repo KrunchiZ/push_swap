@@ -6,15 +6,14 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 19:03:56 by kchiang           #+#    #+#             */
-/*   Updated: 2025/08/27 16:48:48 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/10/22 20:31:34 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHECKER_BONUS_H
 # define CHECKER_BONUS_H
 
-# include "libft.h"
-# include <limits.h>
+# include <stddef.h>
 
 /* Macros for action strings.
  * */

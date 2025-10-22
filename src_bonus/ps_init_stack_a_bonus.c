@@ -6,10 +6,11 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 17:26:25 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/17 15:04:43 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/10/22 20:34:02 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include "checker_bonus.h"
 
 static void	ps_sort_index(t_stack *stack);

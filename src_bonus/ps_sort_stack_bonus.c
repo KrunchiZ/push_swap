@@ -6,10 +6,14 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 14:18:13 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/18 21:32:28 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/10/22 20:36:04 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
+#include <stdbool.h>
+#include <unistd.h>
+#include "libft.h"
 #include "checker_bonus.h"
 
 static int	ps_action_is_invalid(char *action);

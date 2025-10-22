@@ -6,10 +6,11 @@
 /*   By: kchiang <kchiang@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 17:15:30 by kchiang           #+#    #+#             */
-/*   Updated: 2025/07/17 15:04:31 by kchiang          ###   ########.fr       */
+/*   Updated: 2025/10/22 20:33:47 by kchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "checker_bonus.h"
 
 /* Function for freeing the ft_split char **args in struct set.
