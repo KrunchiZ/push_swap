@@ -38,24 +38,24 @@ bonus: $(BONUS)
 
 $(NAME): $(PS_SRC) $(PS_MAIN) $(LIBFT)
 	@$(CC) $(CFLAGS) $(IFLAGS) $^ -o $@
-	@echo "Compiling $(GREEN)$(NAME)$(WHITE)..."
+	@printf "Compiling $(GREEN)$(NAME)$(WHITE)...\n"
 
 $(BONUS): $(BS_SRC) $(LIBFT)
 	@$(CC) $(CFLAGS) $(IFLAGS) $^ -o $@
-	@echo "Compiling $(GREEN)bonus$(WHITE)..."
+	@printf "Compiling $(GREEN)bonus$(WHITE)...\n"
 
 $(LIBFT):
-	@echo "Making $(GREEN)$(LIBFT)$(WHITE)..."
+	@printf "Making $(GREEN)$(LIBFT)$(WHITE)...\n"
 	@make -C $(LIBFT_DIR)
 	@cp $(addprefix $(LIBFT_DIR), $(LIBFT)) $(LIBFT)
 
 fclean: clean
 	@rm -f $(NAME) $(BONUS)
-	@echo "Removing program files..."
+	@printf "Removing program files...\n"
 
 clean:
 	@make -C $(LIBFT_DIR) clean
 	@rm -f $(LIBFT) $(LIBFT_DIR)/$(LIBFT)
-	@echo "Removing $(GREEN)$(LIBFT)$(WHITE)..."
+	@printf "Removing $(GREEN)$(LIBFT)$(WHITE)...\n"
 
 re: fclean all
